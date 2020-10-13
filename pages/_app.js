@@ -1,10 +1,9 @@
 import "../styles/globals.css";
-import { Layout } from "antd";
 import Head from "next/head";
 import App from "next/app";
 import Nav from "../components/AppLayout/Nav";
 import Foot from "../components/AppLayout/Footer";
-const { Header, Footer, Content } = Layout;
+
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
@@ -18,7 +17,7 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <div className="lay">
-        <Layout>
+      
           <Head>
             <title>Why Hello There</title>
             <link rel="stylesheet" type="text/css" href="/globals.css" />
@@ -26,13 +25,13 @@ class MyApp extends App {
           <Header className="head">
             <Nav />
           </Header>
-          <Content>
+        
             <div className="main">
               <Component {...pageProps} />
             </div>
-          </Content>
+        
           <Foot />
-        </Layout>
+      
         <style jsx>{`
           .lay {
             display: flex;
